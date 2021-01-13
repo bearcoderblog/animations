@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(https://images.wallpaperscraft.com/image/new_york_united_states_of_america_night_top_view_hdr_13629_2560x1440.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    display: table;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: #fff;
+    font-size: 70px;
+}
+
+button {
+    width: 300px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-weight: 300;
+    color: #fff;
+    background: rgba(0,0,0,0);
+    font-size: 20px;
+}
+
+#snackbar {
+    min-width: 300px;
+    margin-left: -150px;
+    visibility: hidden;
+    bottom: 30px;
+    left: 50%;
+    z-index: 1;
+    font-size: 25px;
+    position: absolute;
+    padding: 16px;
+    color: #000;
+    background: #fff;
+    border-radius: 5px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein .5s, fadeout .5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

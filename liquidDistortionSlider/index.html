@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <div class="slider">
+            <div id="rgbKineticSlider" class="rgbKineticSlider"></div>
+            <nav>
+                <a href="#" class="main-nav prev" data-nav="previous">Prev</a>
+                <a href="#" class="main-nav next" data-nav="next">Next</a>
+            </nav>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/imagesLoaded.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/libs/pixi-filters.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbKineticSlider/js/rgbKineticSlider.js"></script>
+
+    <script>
+        const images = [
+            "http://hmongouachon.com/_demos/rgbKineticSlider/nature-01.jpg",
+            "http://hmongouachon.com/_demos/rgbKineticSlider/nature-02.jpg",
+            "http://hmongouachon.com/_demos/rgbKineticSlider/nature-03.jpg",
+        ];
+        const texts = [["UNLOCKED"], ["OFFBEAT"], ["ASTERISKS"]];
+
+        rgbKineticSlider = new rgbKineticSlider({
+            slideImages: images,
+            itemsTitles: texts,
+
+            backgroundDisplacementSprite: 'http://hmongouachon.com/_demos/rgbKineticSlider/map-9.jpg', // slide displacement image 
+            cursorDisplacementSprite: 'http://hmongouachon.com/_demos/rgbKineticSlider/displace-circle.png', // cursor displacement image
+
+            cursorScaleIntensity: 0.6,
+            cursorMomentum: 0.14,
+
+            swipe: true,
+            swipeDistance: window.innerWidth * 0.4,
+            swipeScaleIntensity: 2,
+
+            slideTransitionDuration: 0.8,
+            transitionScaleIntensity: 30,
+            transitionScaleAmplitude: 160,
+
+            nav: true,
+            navElement: ".main-nav",
+
+            imagesRgbEffect: false,
+
+            textsDisplay: true,
+            textTitleSize: 140,
+            textsTitleEffect: true,
+            googleFonts: ["Playfair Display: 400"],
+            textsRgbEffect: true,
+            textsRgbIntensity: 1
+        })
+    </script>
+
+</body>
+</html>

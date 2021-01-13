@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="loader"></div>
+    <div id="content">
+        <h1>GIF AS A PRELOADER</h1>
+    </div>
+    <script>
+        var loader;
+        function loadNow(opacity) {
+            if(opacity <= 0) {
+                displayContent();
+            } else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function() {
+                    loadNow(opacity - 0.005)
+                }, 100);
+            }
+        }
+
+        function displayContent() {
+            loader.style.display = "content";
+            document.getElementById('content').style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loader = document.getElementById('loader');
+            loadNow(1);
+        })
+    </script>
+</body>
+</html>

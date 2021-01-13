@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+</head>
+<body>
+    <div class="navigation-wrapper">
+        <div class="project-preview-wrapper">
+            <div class="project-preview"></div>
+        </div>
+        <ul class="navigation-list">
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-1">
+                    <span data-text="Mouthwash">Mouthwash</span>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-2">
+                    <span data-text="Offbeat">Offbeat</span>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-3">
+                    <span data-text="Expansions">Expansions</span>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-4">
+                    <span data-text="Canals">Canals</span>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-5">
+                    <span data-text="Charger">Charger</span>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-6">
+                    <span data-text="Unlocked">Unlocked</span>
+                </a>
+            </li>
+            <li class="navigation-item">
+                <a href="#" class="navigation-link navigation-link-7">
+                    <span data-text="Craft">Craft</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="progressbar"></div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            TweenMax.set(".project-preview", { width: 0 });
+
+            var t1 = new TimelineLite();
+
+            $(document).on("mouseover", ".navigation-item", function(evt) {
+                t1 = new TimelineLite();
+                t1.to($(".project-preview"), 1, {
+                    width: "600px",
+                    ease: Expo.easeInOut
+                });
+            }).on("mouseout", ".navigation-item", function(evt) {
+                t1 = new TimelineLite();
+                t1.to($(".project-preview"), 0.5, {
+                    width: "0",
+                    ease: Expo.easeInOut
+                });
+            })
+        })
+
+        $(".navigation-link-1").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/4322501/pexels-photo-4322501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(".navigation-link-2").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/3876328/pexels-photo-3876328.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(".navigation-link-3").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/3791466/pexels-photo-3791466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(".navigation-link-4").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/4133413/pexels-photo-4133413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(".navigation-link-5").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(".navigation-link-6").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/4171211/pexels-photo-4171211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(".navigation-link-7").hover(function() {
+            $(".project-preview").css({"background-image": "url(https://images.pexels.com/photos/4015088/pexels-photo-4015088.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"})
+        })
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop(),
+            dh = $(document).height(),
+            wh = $(window).height();
+            scrollPercent = (scroll / (dh - wh)) * 100;
+            $(".progressbar").css("height", scrollPercent + "%");
+        })
+    </script>
+</body>
+</html>

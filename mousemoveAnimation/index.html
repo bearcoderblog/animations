@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-back"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script>
+        var windowWidth = $(window).width();
+        $('.page-container').mousemove(function(event) {
+            var moveX = (($(window).width() / 2) - event.pageX) * 0.1;
+            var moveY = (($(window).height() / 2) - event.pageY) * 0.1;
+            console.log(moveX);
+            console.log(moveY);
+            $('.page-back').css('margin-left', moveX + 'px');
+            $('.page-back').css('margin-top', moveY + 'px');
+        })
+    </script>
+</body>
+</html>

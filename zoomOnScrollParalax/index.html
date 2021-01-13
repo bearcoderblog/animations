@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero-back">
+        <img src="https://i.dlpng.com/static/png/6430532_preview.png" alt="">
+    </div>
+    <div class="content">
+        <h1>Content goes here</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ullam fuga quia dolorum velit itaque eius perspiciatis error a aut. Repudiandae laborum rem culpa dicta, illum autem at iure! Vel!</p>
+        <p>Consequuntur nulla eaque eligendi veniam tenetur eum natus, ipsum sunt sit iure non modi doloremque illo dolores cumque vero deserunt inventore necessitatibus, asperiores beatae veritatis. Enim dolorum similique ipsa quisquam.</p>
+        <p>Dicta sit quod dolore illo! Commodi aliquid, recusandae quam reprehenderit non magni est ex corrupti suscipit eum inventore ea perferendis labore vitae unde asperiores ipsa veniam! Placeat, deserunt. Quod, soluta!</p>
+        <p>Rem labore esse velit, fuga corporis nihil odit aperiam cum suscipit consequuntur incidunt possimus ullam placeat minima architecto, commodi, similique id atque quisquam repellat mollitia harum totam voluptatum. Assumenda, corrupti.</p>
+    </div>
+    
+    <script>
+        $(window).scroll(function() {
+            var scrollPos = $(this).scrollTop();
+            $(".hero-back").css({
+               'background-size': 100 + scrollPos + '%'
+            });
+        })
+    </script>
+</body>
+</html>
